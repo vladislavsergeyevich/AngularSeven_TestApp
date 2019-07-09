@@ -1,0 +1,25 @@
+<div class='container'>
+  <h2>
+    Sign-in!
+  </h2>
+
+  <div class="example-container" >
+
+         <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput [formControl]="password" placeholder="Enter your password"  [type]="hide ? 'password' : 'text'" required>
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="password.invalid">{{ getErrorPasswordMessage() }}</mat-error>
+          </mat-form-field>
+          <button mat-raised-button
+                  color="primary"
+                  [disabled]="email.invalid || password.invalid"
+                  (click)="signIn()"
+                  routerLink="/home">Sign-in</button>
+  </div>
+
+</div>

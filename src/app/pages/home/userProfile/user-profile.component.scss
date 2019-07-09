@@ -1,0 +1,16 @@
+
+.container {
+  position: fixed;
+  top: 122px;
+  padding: 0 30px 0 30px;
+  display: flex;
+  justify-content: center;
+  
+  .example-card {
+    min-width: 200px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+}
